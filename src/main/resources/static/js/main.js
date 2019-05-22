@@ -27,13 +27,13 @@ function fire_ajax_submit() {
         data: json,
         dataType: 'text',
         success: function (formArray) {
-        	console.log("콘솔")
-        	//console.log("SUCCESS : ", formArray);
-        	//window.location.href = "/users";
-        	
+           //console.log("콘솔");
+           console.log("SUCCESS : ", formArray);
+           window.location.href = "/users";
+           
         },
         error: function (e) {
-        	console.log("ERROR : ", e);        	
+           console.log("ERROR : ", e);           
         }
     });
 
