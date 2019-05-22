@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
-	<script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
-<title>Insert title here</title>
+    <title>Registration Form</title>
+   <th:block th:include="fragments/header"></th:block>
+   <script type="text/javascript" src="js/main.js"></script>
 </head>
+
 <body>
+
+<th:block th:include="fragments/nav"></th:block>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,14 +20,17 @@
     </tr>
   </thead>
   <tbody>
-	<tr th:each="user : ${users}">
-		<th scope="row"><span th:text="${user.id}"></span></td>
-		<td><span th:text="${user.name}"></span></td>
-		<td><span th:text="${user.company}"></span></td>
-    </tr>
+      <tr th:each="user : ${users}">
+      <th scope="row">
+      <a th:href="@{/users/{id}(id=${user.id})}">
+      <span th:text="${user.id}"></a></span></td>
+      <td><span th:text="${user.name}"></span></td>
+      <td><span th:text="${user.company}"></span></td>
+   </tr>
   </tbody>
 </table>
 
+<th:block th:include="fragments/footer"></th:block>
 
 </body>
 </html>
