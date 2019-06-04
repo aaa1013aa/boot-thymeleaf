@@ -30,8 +30,13 @@ public class UserController {
 		return "index";
 	}
 	
-	@GetMapping("/user-login-form")
+	@GetMapping("/user-login")
 	public String getLoginFrom(Model model) {
+		return "login";
+	}
+	
+	@GetMapping("/user-logout")
+	public String getLogoutFrom(Model model) {
 		return "login";
 	}
 	
@@ -69,7 +74,7 @@ public class UserController {
 		return "/";
 	}
 	
-	@GetMapping("/user-register-form")
+	@GetMapping("/user-regist")
 	public String getRegForm(Model model) {
 		return "register";
 	}

@@ -43,14 +43,21 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/user-login-form">Log-In</a>
+                                <li th:unless="${session.user}" class="nav-item">
+                                    <a class="nav-link" href="/user-login">Log-In</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/user-register-form">Sign-Up</a>
+                                <li th:unless="${session.user}" class="nav-item">
+                                    <a class="nav-link" href="/user-regist">Sign-Up</a>
                                 </li>
+                                <li th:if="${session.user}" class="nav-item">
+                                    <a class="nav-link" href="/user-logout">Log-Out</a>
+                                </li>
+                                <li th:if="${session.user}" class="nav-item">
+                                    <a class="nav-link" href="/user-logout">Update</a>
+                                </li>
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="project.html">Portfolio</a>
+                                    <a class="nav-link" href="project.html">portfolio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="blog.html">Blog</a>
